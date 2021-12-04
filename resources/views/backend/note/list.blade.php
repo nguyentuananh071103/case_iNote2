@@ -39,8 +39,8 @@
 {{--                        <td><a href="{{route('notes.detail', $note->id)}}">{{$note["image"]}}</a></td>--}}
                         <td><img style="width: 350px; height: 150px" src="img/{{$note->image}}" alt=""></td>
                         {{--                            <td><a class="btn btn-warning" href="{{route('categories.detail',$category->id)}}">Detail</a></td>--}}
-                        <td><a class="btn btn-success" href="{{route('notes.update',$note->id)}}"><i class="fas fa-edit"></i></a></td>
-                        <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('notes.delete',$note->id)}}"><i class="fas fa-trash-alt"></i></a></td>
+                        <td><a class="btn btn-warning" href="{{route('notes.update',$note->id)}}">Update</a></td>
+                        <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('notes.delete',$note->id)}}">Delete</a></td>
                     </tr>
                 @endforeach
                 </tbody>
