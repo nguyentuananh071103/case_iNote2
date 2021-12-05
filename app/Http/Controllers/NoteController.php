@@ -6,6 +6,7 @@ use App\Http\Requests\CreateNoteRequest;
 use App\Models\Category;
 use App\Repository\NoteRepository;
 use Illuminate\Http\Request;
+use MongoDB\Driver\Session;
 
 class NoteController extends Controller
 {
@@ -36,9 +37,8 @@ class NoteController extends Controller
 //            "name" => "required | max:20 | min:6",
 //            "description" => "required"
 //        ]);
-
         $this->noteRepository->create($request);
-        return redirect()->route('notes.list');
+        return redirect()->route('notes.list')->with('message','Thêm mới thành công');
     }
 
     public function show($id)

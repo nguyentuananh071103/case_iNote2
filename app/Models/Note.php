@@ -12,5 +12,4 @@ class Note extends Model
     function categories(){
         return $this->belongsTo(Category::class,'category_id','id');
     }
-
 }

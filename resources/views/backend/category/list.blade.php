@@ -13,11 +13,11 @@
 </style>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Category List</h6>
+        <h6 class="m-0 font-weight-bold text-primary">CATEGORY LIST</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <a href="{{route("categories.create")}}"><button>ADD CATEGORY</button></a>
+            <a href="{{route("categories.create")}}"><button type="button" class="btn btn-outline-success">Add Category</button></a>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
@@ -32,10 +32,10 @@
                         <td>{{$key+1}}</td>
                         <td>{{$category["name"]}}</td>
 {{--                        <td><a class="btn btn-warning" href="{{route('categories.detail',$category->id)}}">Detail</a></td>--}}
-                        <td><a class="btn btn-warning" href="{{route('categories.update',$category->id)}}">Update</a></td>
+                        <td><a href="{{route('categories.update',$category->id)}}"><button type="button" class="btn btn-outline-warning">Update</button></a></td>
 {{--                        <td><a class="btn btn-success" href="{{route('categories.update',$category->id)}}"><i class="fas fa-edit"></i></a></td>--}}
 {{--                        <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('categories.delete',$category->id)}}"><i class="fas fa-trash-alt"></i></a></td>--}}
-                        <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('categories.delete',$category->id)}}">Delete</a></td>
+                        <td><a onclick="return confirm('Are you sure ??')" href="{{route('categories.delete',$category->id)}}"><button type="button" class="btn btn-outline-danger">Delete</button></a></td>
                     </tr>
                 @endforeach
                 </tbody>

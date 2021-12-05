@@ -8,23 +8,21 @@ use App\Models\Note;
 
 class NoteRepository
 {
-    public function getAll()
+    public function getAll($paginate = 5)
     {
-
-        $notes = Note::all();
+        $notes = Note::paginate($paginate);
         return $notes ;
     }
 
     public function create($request)
     {
-        $data = $request->only('category_id','title','content','image');
+        $data = $request->all();
         $image = $request->file('file');
         $data['image'] = time() . '.' . $image->getClientOriginalExtension();
         $path = public_path('img');
         $image->move($path, $data['image']);
         $note = Note::query()->create($data);
         return $note;
-
     }
 
     public function store( $request)

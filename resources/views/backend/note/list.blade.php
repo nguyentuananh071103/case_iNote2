@@ -1,5 +1,6 @@
 @extends('backend.layouts.master')
 @section('content')
+
 <style>
     th{
         text-align: center;
@@ -13,11 +14,21 @@
 </style>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Note List</h6>
+        <h6 class="m-0 font-weight-bold text-primary">NOTE LIST</h6>
     </div>
+    <script>
+        @if(Session::has('message'))
+            toastr.options =
+            {
+                "closeButton" : true,
+                "progressBar" : true
+            }
+        toastr.success("{{ session('message') }}");
+        @endif
+    </script>
     <div class="card-body">
         <div class="table-responsive">
-            <a href="{{route("notes.create")}}"><button>ADD NOTE</button></a>
+            <a href="{{route("notes.create")}}"><button type="button" class="btn btn-outline-success">Add Note</button></a>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
@@ -46,13 +57,15 @@
 {{--                        <td><a href="{{route('notes.detail', $note->id)}}">{{$note["image"]}}</a></td>--}}
                         <td style="width: 250px; height: 180px"><img  src="img/{{$note->image}}" alt=""></td>
 {{--                        <td><a class="btn btn-warning" href="{{route('notes.detail',$note->id)}}">Detail</a></td>--}}
-                        <td><a class="btn btn-warning" href="{{route('notes.update',$note->id)}}">Update</a></td>
-                        <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('notes.delete',$note->id)}}">Delete</a></td>
+                        <td><a href="{{route('notes.update',$note->id)}}"><button type="button" class="btn btn-outline-warning">Update</button></a></td>
+                        <td><a onclick="return confirm('Are you sure ??')" href="{{route('notes.delete',$note->id)}}"><button type="button" class="btn btn-outline-danger">Delete</button></a></td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
+        {{$notes->links()}}
     </div>
 </div>
 @endsection
+

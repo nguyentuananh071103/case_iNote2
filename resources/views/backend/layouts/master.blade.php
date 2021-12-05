@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +14,6 @@
     <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
     <!-- Custom styles -->
     <link rel="stylesheet" href="{{asset('backend/css/style.min.css')}}">
-
 </head>
 
 <body>
@@ -216,6 +219,7 @@
 </div>
 <!-- Chart library -->
 <script src="{{asset('backend/plugins/chart.min.js')}}"></script>
+
 <!-- Icons library -->
 <script src="{{asset('backend/plugins/feather.min.js')}}"></script>
 <!-- Custom scripts -->

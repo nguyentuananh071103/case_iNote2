@@ -15,7 +15,7 @@
     </style>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">User List</h6>
+            <h6 class="m-0 font-weight-bold text-primary">USER LIST</h6>
         </div>
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
@@ -27,7 +27,6 @@
                 <th>Image</th>
             </tr>
             </thead>
-        </table>
         <tbody>
         @foreach($users as $key => $user)
             <tr>
@@ -44,6 +43,7 @@
             </tr>
         @endforeach
         </tbody>
+        </table>
     </div>
 @endsection
 <!-- JavaScript Bundle with Popper -->
