@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('backend.layouts.master');
 });
 
 
@@ -39,3 +41,26 @@ Route::prefix('categories')->group(function() {
     Route::post('/{id}/update',[CategoryController::class,"update"])->name("categories.update");
     Route::get('/{id}/delete',[CategoryController::class,"destroy"])->name("categories.delete");
 });
+
+Route::prefix('users')->group(function () {
+    Route::get('/',[UserController::class,"index"])->name("users.list");
+//    Route::get('/create',[UserController::class,"create"])->name("users.create");
+//    Route::post('/create',[UserController::class,"store"])->name("users.store");
+//    Route::get('/{id}/detail',[UserController::class,"show"])->name("users.detail");
+//    Route::get('/{id}/update',[UserController::class,"edit"])->name("users.edit");
+//    Route::post('/{id}/update',[UserController::class,"update"])->name("users.update");
+//    Route::get('/{id}/delete',[UserController::class,"destroy"])->name("users.delete");
+});
+
+Route::get('/login',[AuthController::class,"showFormLogin"])->name("admin.showFormLogin");
+Route::post('/login',[AuthController::class,"login"])->name("admin.login");
+Route::get('/logout',[AuthController::class,"logout"])->name("admin.logout");
+
+
+Route::get('/register',[AuthController::class,"showFormRegister"])->name("admin.showFormRegister");
+Route::post('/register',[AuthController::class,"register"])->name("admin.register");
+
+
+
+
+

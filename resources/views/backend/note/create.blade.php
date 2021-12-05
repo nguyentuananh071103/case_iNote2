@@ -21,7 +21,13 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>Category_id</th>
-                        <td><input style="width: 90%" type="number" name="category_id"></td>
+                        <td>
+                            <select name="brand_id" class="form-control" type="number">
+                                @foreach($categories as  $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Title</th>

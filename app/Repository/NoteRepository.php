@@ -2,14 +2,17 @@
 
 namespace App\Repository;
 
+use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Models\Category;
 use App\Models\Note;
 
 class NoteRepository
 {
     public function getAll()
     {
+
         $notes = Note::all();
-        return $notes;
+        return $notes ;
     }
 
     public function create($request)
@@ -21,19 +24,20 @@ class NoteRepository
         $image->move($path, $data['image']);
         $note = Note::query()->create($data);
         return $note;
+
     }
 
-    public function store($request)
+    public function store( $request)
     {
-        $data = $request->only('title','content','request');
-        Note::query()->create();
+        $data = $request->all();
+       return Note::query()->create($data);
     }
 
-    public function getByUserId($userId)
-    {
-        $notes = Note::where('user_id',$userId);
-        return $notes;
-    }
+//    public function getByUserId($userId)
+//    {
+//        $notes = Note::where('user_id',$userId);
+//        return $notes;
+//    }
 
     public function getById($id)
     {

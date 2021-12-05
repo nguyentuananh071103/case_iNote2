@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+@extends('backend.layouts.master')
+@section('content')
 <style>
     th{
         text-align: center;
@@ -31,7 +32,7 @@
                         <td>{{$key+1}}</td>
                         <td>{{$category["name"]}}</td>
 {{--                        <td><a class="btn btn-warning" href="{{route('categories.detail',$category->id)}}">Detail</a></td>--}}
-                        <td><a class="btn btn-warning" href="{{route('categories.detail',$category->id)}}">Update</a></td>
+                        <td><a class="btn btn-warning" href="{{route('categories.update',$category->id)}}">Update</a></td>
 {{--                        <td><a class="btn btn-success" href="{{route('categories.update',$category->id)}}"><i class="fas fa-edit"></i></a></td>--}}
 {{--                        <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('categories.delete',$category->id)}}"><i class="fas fa-trash-alt"></i></a></td>--}}
                         <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('categories.delete',$category->id)}}">Delete</a></td>
@@ -42,4 +43,4 @@
         </div>
     </div>
 </div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+@endsection

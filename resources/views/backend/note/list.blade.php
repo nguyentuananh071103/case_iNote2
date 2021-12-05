@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+@extends('backend.layouts.master')
+@section('content')
 <style>
     th{
         text-align: center;
@@ -33,12 +34,18 @@
                     <tr>
                         <td>{{$key+1}}</td>
 {{--                        <td><a href="{{route('notes.detail',$note->id)}}">{{$note["image"]}}</a></td>--}}
-                        <td>{{$note["category_id"]}}</td>
+                        <td>
+                            @if($note->category_id)
+                                <p>{{$note->categories->name}}</p>
+                            @else
+                                <p> Chưa phân loại category</p>
+                            @endif
+                        </td>
                         <td>{{$note["title"]}}</td>
                         <td>{{$note["content"]}}</td>
 {{--                        <td><a href="{{route('notes.detail', $note->id)}}">{{$note["image"]}}</a></td>--}}
-                        <td><img style="width: 350px; height: 150px" src="img/{{$note->image}}" alt=""></td>
-                        {{--                            <td><a class="btn btn-warning" href="{{route('categories.detail',$category->id)}}">Detail</a></td>--}}
+                        <td style="width: 250px; height: 180px"><img  src="img/{{$note->image}}" alt=""></td>
+{{--                        <td><a class="btn btn-warning" href="{{route('notes.detail',$note->id)}}">Detail</a></td>--}}
                         <td><a class="btn btn-warning" href="{{route('notes.update',$note->id)}}">Update</a></td>
                         <td><a class="btn btn-danger" onclick="return confirm('Are you sure ??')" href="{{route('notes.delete',$note->id)}}">Delete</a></td>
                     </tr>
@@ -48,4 +55,4 @@
         </div>
     </div>
 </div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+@endsection

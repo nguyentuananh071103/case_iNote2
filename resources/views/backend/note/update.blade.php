@@ -21,7 +21,16 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>Category_id</th>
-                        <td><input style="width: 90%" type="number" name="category_id" value="{{$note->category_id}}"></td>
+                        <td>
+                            <select name="category_id" class="form-control">
+                                @foreach($categories as  $category)
+                                    @if($category->id == $note->category_id)
+                                        <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                    @else
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endif
+                                @endforeach
+                            </select></td>
                     </tr>
                     <tr>
                         <th>Title</th>

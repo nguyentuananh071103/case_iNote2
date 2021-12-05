@@ -1,3 +1,5 @@
+@extends('backend.layouts.master')
+@section('content')
 <style>
         th{
             text-align: center;
