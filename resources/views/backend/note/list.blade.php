@@ -54,7 +54,6 @@
                         </td>
                         <td>{{$note["title"]}}</td>
                         <td>{{$note["content"]}}</td>
-{{--                        <td><a href="{{route('notes.detail', $note->id)}}">{{$note["image"]}}</a></td>--}}
                         <td style="width: 250px; height: 180px"><img  src="img/{{$note->image}}" alt=""></td>
 {{--                        <td><a class="btn btn-warning" href="{{route('notes.detail',$note->id)}}">Detail</a></td>--}}
                         <td><a href="{{route('notes.update',$note->id)}}"><button type="button" class="btn btn-outline-warning">Update</button></a></td>

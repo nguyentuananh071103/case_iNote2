@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
@@ -26,9 +28,9 @@ class AuthController extends Controller
 
     public function logout()
     {
-        Session::flush();
+        flush();
         Auth::logout();
-        return redirect()->route('admin.login');
+        return redirect()->route('admin.showFormLogin');
     }
 
     public function showFormRegister()
@@ -39,10 +41,8 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $data = $request->only('name','email','password');
-        if (Auth::attempt($data)) {
-            return redirect()->route('admin.register');
-        } else {
-            dd("Login Fail");
-        }
+        $data["password"] = Hash::make($request->password);
+        User::query()->create($data);
+        return redirect()->route("admin.showFormLogin");
     }
 }

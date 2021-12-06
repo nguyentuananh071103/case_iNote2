@@ -17,11 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('backend.layouts.master');
-});
-
-
 Route::prefix('notes')->group(function (){
     Route::get('/',[NoteController::class,"index"])->name("notes.list");
     Route::get('/create',[NoteController::class,"create"])->name("notes.create");
@@ -44,15 +39,9 @@ Route::prefix('categories')->group(function() {
 
 Route::prefix('users')->group(function () {
     Route::get('/',[UserController::class,"index"])->name("users.list");
-//    Route::get('/create',[UserController::class,"create"])->name("users.create");
-//    Route::post('/create',[UserController::class,"store"])->name("users.store");
-//    Route::get('/{id}/detail',[UserController::class,"show"])->name("users.detail");
-//    Route::get('/{id}/update',[UserController::class,"edit"])->name("users.edit");
-//    Route::post('/{id}/update',[UserController::class,"update"])->name("users.update");
-//    Route::get('/{id}/delete',[UserController::class,"destroy"])->name("users.delete");
 });
 
-Route::get('/login',[AuthController::class,"showFormLogin"])->name("admin.showFormLogin");
+Route::get('/',[AuthController::class,"showFormLogin"])->name("admin.showFormLogin");
 Route::post('/login',[AuthController::class,"login"])->name("admin.login");
 Route::get('/logout',[AuthController::class,"logout"])->name("admin.logout");
 

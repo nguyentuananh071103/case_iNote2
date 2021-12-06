@@ -18,7 +18,8 @@
     <article class="sign-up">
         <h1 class="sign-up__title">Get started</h1>
         <p class="sign-up__subtitle">Start creating the best possible user experience for you customers</p>
-        <form class="sign-up-form form" method="post" action="{{route('admin.register')}}">
+        <form class="sign-up-form form" method="post" >
+            @csrf
             <label class="form-label-wrapper">
                 <p class="form-label">Name</p>
                 <input class="form-input" type="text" name="name" placeholder="Enter your name" required>
