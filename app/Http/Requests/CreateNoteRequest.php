@@ -24,8 +24,6 @@ class CreateNoteRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-//            "name" => "required | max:20 | min:6",
             "title" => "required",
             "content" => "required",
         ];
@@ -34,8 +32,6 @@ class CreateNoteRequest extends FormRequest
     public function messages()
     {
         return [
-//            'name.required' => 'Tên danh mục không được để trống',
-//            'name.min' => 'Tên danh mục không được nhỏ hơn 6 ký tự',
             'title.required' => 'Tiêu đề không được để trống',
             'content.required' => 'Nội dung không được để trống',
         ];

@@ -29,7 +29,7 @@
     <div class="card-body">
         <div class="table-responsive">
             <a href="{{route("notes.create")}}"><button type="button" class="btn btn-outline-success">Add Note</button></a>
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
                     <th>ID</th>

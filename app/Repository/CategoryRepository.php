@@ -23,6 +23,7 @@ class CategoryRepository
     {
         $data = $request->only('name','request');
         Category::query()->create();
+        return $data;
     }
 
     public function getByUserId($userId)

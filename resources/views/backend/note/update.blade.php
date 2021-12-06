@@ -38,7 +38,9 @@
                         <td><input style="width: 90%" type="text" name="title" value="{{$note->title}}"></td>
                     </tr><tr>
                         <th>Content</th>
-                        <td><input style="width: 90%" type="text" name="content" value="{{$note->content}}"></td>
+                        <td>
+                            <textarea style="width: 90%;height: 230px " type="text" name="content" cols="30">{!! $note->content !!}</textarea>
+                        </td>
                     </tr>
                     <tr>
                         <th>Image</th>

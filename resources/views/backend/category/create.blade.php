@@ -21,7 +21,12 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>Name</th>
-                        <td><input style="width: 90%" type="text" name="name"></td>
+                        <td>
+                            <input style="width: 90%" type="text" name="name">
+                            @error('name')
+                            <p class="text text-danger">{{$message}}"></p>
+                            @enderror
+                        </td>
                     </tr>
                     <tr>
                         <a href="{{route('categories.list')}}"><button  type="button" class="btn btn-outline-danger">Back</button></a>

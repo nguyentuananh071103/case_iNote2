@@ -25,7 +25,6 @@ class CreateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
             "name" => "required",
         ];
     }
@@ -33,8 +32,7 @@ class CreateCategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Tên danh mục không được để trống',
-//
+            'name.required' => 'Tên thể loại không được để trống',
         ];
     }
 }

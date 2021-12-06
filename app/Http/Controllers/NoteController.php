@@ -18,7 +18,7 @@ class NoteController extends Controller
 
     public function index()
     {
-        //        $userId = Auth::user()->id;
+//                $userId = Auth::user()->id;
 //        $categories = $this->categoryRepository->getByUserId($userId);
         $categories = Category::all();
         $notes = $this->noteRepository->getAll();
@@ -33,10 +33,6 @@ class NoteController extends Controller
 
     public function store(CreateNoteRequest $request)
     {
-        //        $validated = $request->validate([
-//            "name" => "required | max:20 | min:6",
-//            "description" => "required"
-//        ]);
         $this->noteRepository->create($request);
         return redirect()->route('notes.list')->with('message','Thêm mới thành công');
     }
@@ -57,7 +53,6 @@ class NoteController extends Controller
     public function update(Request $request, $id)
     {
         $this->noteRepository->update($request, $id);
-//        return redirect()->route("notes.list");
         return redirect()->route('notes.list')->with('message','Sửa note thành công');
 
     }
@@ -65,7 +60,6 @@ class NoteController extends Controller
     public function destroy($id)
     {
         $this->noteRepository->delete($id);
-//        return redirect()->route("notes.list");
         return redirect()->route('notes.list')->with('message','Xóa note thành công');
     }
 }

@@ -20,7 +20,8 @@ class AuthController extends Controller
     {
         $data = $request->only('email','password');
         if (Auth::attempt($data)) {
-            return redirect()->route('notes.list');
+            return redirect()->route('notes.list')->with('message','Đăng nhập thành công');
+
         } else {
             dd("Login Fail");
         }
@@ -43,6 +44,6 @@ class AuthController extends Controller
         $data = $request->only('name','email','password');
         $data["password"] = Hash::make($request->password);
         User::query()->create($data);
-        return redirect()->route("admin.showFormLogin");
+        return redirect()->route("admin.showFormLogin")->with('message','Đăng ký thành công rực rỡ');
     }
 }

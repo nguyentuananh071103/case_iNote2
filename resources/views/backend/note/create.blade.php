@@ -32,11 +32,22 @@
                     </tr>
                     <tr>
                         <th>Title</th>
-                        <td><input style="width: 90%" type="text" name="title"></td>
+                        <td>
+                            <input style="width: 90%" type="text" name="title">
+                            @error('title')
+                            <p class="text text-danger">{{$message}}"></p>
+                            @enderror
+                        </td>
                     </tr>
                     <tr>
                         <th>Content</th>
-                        <td><input style="width: 90%" type="text" name="content"></td>
+                        <td>
+{{--                            <input style="width: 90%" type="text" name="content">--}}
+                            <textarea style="width: 90%" type="text" name="content" id="" cols="30" rows="10"></textarea>
+                            @error('content')
+                            <p class="text text-danger">{{$message}}"></p>
+                            @enderror
+                        </td>
                     </tr>
                     <tr>
                         <th>Image</th>

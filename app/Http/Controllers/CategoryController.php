@@ -36,7 +36,7 @@ class CategoryController extends Controller
 //            "description" => "required"
 //        ]);
         $this->categoryRepository->create($request);
-        return redirect()->route('categories.list');
+        return redirect()->route('categories.list')->with('message','Thêm thể loại mới thành công');
     }
 
     public function show($id)
@@ -54,12 +54,12 @@ class CategoryController extends Controller
     {
 
         $this->categoryRepository->update($request, $id);
-        return redirect()->route("categories.list");
+        return redirect()->route('categories.list')->with('message','Sửa thể loại thành công');
     }
 
     public function destroy($id)
     {
         $this->categoryRepository->delete($id);
-        return redirect()->route("categories.list");
+        return redirect()->route('categories.list')->with('message','Xóa thể loại thành công');
     }
 }

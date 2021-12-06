@@ -13,7 +13,18 @@
 </head>
 
 <body>
-<div class="layer"></div>
+<div class="layer">
+    <script>
+        @if(Session::has('message'))
+            toastr.options =
+            {
+                "closeButton" : true,
+                "progressBar" : true
+            }
+        toastr.success("{{ session('message') }}");
+        @endif
+    </script>
+</div>
 <main class="page-center">
     <article class="sign-up">
         <h1 class="sign-up__title">Get started</h1>
@@ -33,7 +44,7 @@
                 <input class="form-input" type="password" name="password" placeholder="Enter your password" required>
             </label>
             <label class="form-checkbox-wrapper">
-                <input class="form-checkbox" type="checkbox" requi  red>
+                <input class="form-checkbox" type="checkbox" required>
                 <span class="form-checkbox-label">Remember me next time</span>
             </label>
             <button class="form-btn primary-default-btn transparent-btn">Sign up</button>

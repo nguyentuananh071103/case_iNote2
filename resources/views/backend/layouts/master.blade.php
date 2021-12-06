@@ -113,10 +113,6 @@
                         <span class="icon menu-toggle--gray" aria-hidden="true"></span>
                     </button>
                     <div class="lang-switcher-wrapper">
-                        <button class="lang-switcher transparent-btn" type="button">
-                            EN
-                            <i data-feather="chevron-down" aria-hidden="true"></i>
-                        </button>
                         <ul class="lang-menu dropdown">
                             <li><a href="##">English</a></li>
                             <li><a href="##">French</a></li>
@@ -184,11 +180,7 @@
                         <ul class="users-item-dropdown nav-user-dropdown dropdown">
                             <li><a href="##">
                                     <i data-feather="user" aria-hidden="true"></i>
-                                    <span>Profile</span>
-                                </a></li>
-                            <li><a href="##">
-                                    <i data-feather="settings" aria-hidden="true"></i>
-                                    <span>Account settings</span>
+                                    <span>{{\Illuminate\Support\Facades\Auth::user()->name??''}}</span>
                                 </a></li>
                             <li><a class="danger" href="{{route("admin.logout")}}">
                                     <i data-feather="log-out" aria-hidden="true"></i>
