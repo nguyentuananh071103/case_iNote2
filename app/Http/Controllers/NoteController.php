@@ -57,12 +57,15 @@ class NoteController extends Controller
     public function update(Request $request, $id)
     {
         $this->noteRepository->update($request, $id);
-        return redirect()->route("notes.list");
+//        return redirect()->route("notes.list");
+        return redirect()->route('notes.list')->with('message','Sửa note thành công');
+
     }
 
     public function destroy($id)
     {
         $this->noteRepository->delete($id);
-        return redirect()->route("notes.list");
+//        return redirect()->route("notes.list");
+        return redirect()->route('notes.list')->with('message','Xóa note thành công');
     }
 }
