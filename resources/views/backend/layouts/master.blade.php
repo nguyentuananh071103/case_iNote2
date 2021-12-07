@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +8,13 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
     <!-- Custom styles -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('backend/css/style.min.css')}}">
+
 </head>
 
 <body>
@@ -32,7 +33,6 @@
                         <span class="logo-title">Elegant</span>
                         <span class="logo-subtitle">Dashboard</span>
                     </div>
-
                 </a>
                 <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
                     <span class="sr-only">Toggle menu</span>
@@ -85,20 +85,9 @@
                 </ul>
             </div>
         </div>
-{{--        <div class="sidebar-footer">--}}
-{{--            <a href="##" class="sidebar-user">--}}
-{{--            <span class="sidebar-user-img">--}}
-{{--                <picture><source srcset="./img/avatar/avatar-illustrated-01.webp" type="image/webp"><img src="./img/avatar/avatar-illustrated-01.png" alt="User name"></picture>--}}
-{{--            </span>--}}
-{{--                <div class="sidebar-user-info">--}}
-{{--                    <span class="sidebar-user__title">Nafisa Sh.</span>--}}
-{{--                    <span class="sidebar-user__subtitle">Support manager</span>--}}
-{{--                </div>--}}
-{{--            </a>--}}
-{{--        </div>--}}
     </aside>
     <div class="main-wrapper">
-        <!-- ! Main nav -->l
+        <!-- ! Main nav -->
         <nav class="main-nav--bg">
             <div class="container main-nav">
                 <div class="main-nav-start">

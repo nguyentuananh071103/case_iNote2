@@ -43,7 +43,8 @@ class AuthController extends Controller
     {
         $data = $request->only('name','email','password');
         $data["password"] = Hash::make($request->password);
-        User::query()->create($data);
-        return redirect()->route("admin.showFormLogin")->with('message','Đăng ký thành công rực rỡ');
+        User::create($data);
+        Session::flash('message','Đăng ký thành công rực rỡ');
+        return redirect()->route("admin.showFormLogin");
     }
 }

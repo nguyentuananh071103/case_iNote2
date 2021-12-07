@@ -35,7 +35,6 @@
                     <th>ID</th>
                     <th>Category_id</th>
                     <th>Title</th>
-                    <th>Content</th>
                     <th>Image</th>
                     <th colspan="3">Action</th>
                 </tr>
@@ -44,7 +43,6 @@
                 @foreach($notes as $key => $note)
                     <tr>
                         <td>{{$key+1}}</td>
-{{--                        <td><a href="{{route('notes.detail',$note->id)}}">{{$note["image"]}}</a></td>--}}
                         <td>
                             @if($note->category_id)
                                 <p>{{$note->categories->name}}</p>
@@ -53,9 +51,9 @@
                             @endif
                         </td>
                         <td>{{$note["title"]}}</td>
-                        <td>{{$note["content"]}}</td>
+
                         <td style="width: 250px; height: 180px"><img  src="img/{{$note->image}}" alt=""></td>
-{{--                        <td><a class="btn btn-warning" href="{{route('notes.detail',$note->id)}}">Detail</a></td>--}}
+                        <td><a href="{{route('notes.detail',$note->id)}}"><button type="button" class="btn btn-outline-info">Detail</button></a></td>
                         <td><a href="{{route('notes.update',$note->id)}}"><button type="button" class="btn btn-outline-warning">Update</button></a></td>
                         <td><a onclick="return confirm('Are you sure ??')" href="{{route('notes.delete',$note->id)}}"><button type="button" class="btn btn-outline-danger">Delete</button></a></td>
                     </tr>

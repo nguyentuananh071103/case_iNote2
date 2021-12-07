@@ -7,7 +7,6 @@
         }
         button{
             margin: 1px;
-            height: 100%;
             width: 100px;
             border-radius: 5px;
         }
@@ -29,10 +28,11 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <a href="{{route('notes.list')}}"><button style="background-color: red" type="button" class="text-white">Back</button></a>
-                        <td><img style="width: 300px; height: 150px" src="{{asset('img/'.$note->image)}}" alt=""></td>
-                        <td>{{$note["image"]}}</td>
-                        <td><textarea name="" id="" cols="45" rows="10">{{$note->content}}</textarea></td>
+                        <a href="{{route('notes.list')}}"><button type="button" class="btn btn-outline-danger">Back</button></a>
+                        <td>{{$note->categories->name}} </td>
+                        <td>{{$note["title"]}}</td>
+                        <td>{{$note["content"]}}</td>
+                        <td><img style="width: 320px; height: 250px" src="{{asset('img/'.$note->image)}}" alt=""></td>
                     </tr>
                     </tbody>
                 </table>
